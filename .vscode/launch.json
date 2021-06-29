@@ -1,0 +1,128 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "WeaselDonutGame (Debug)",
+			"request": "launch",
+			"preLaunchTask": "WeaselDonutGame Win64 Debug Build",
+			"program": "C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\Binaries\\Win64\\UE4-Win64-Debug.exe",
+			"args": [
+			],
+			"cwd": "C:\\Program Files (x86)\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "WeaselDonutGame (DebugGame)",
+			"request": "launch",
+			"preLaunchTask": "WeaselDonutGame Win64 DebugGame Build",
+			"program": "C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\Binaries\\Win64\\UE4-Win64-DebugGame.exe",
+			"args": [
+			],
+			"cwd": "C:\\Program Files (x86)\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "WeaselDonutGame (Development)",
+			"request": "launch",
+			"preLaunchTask": "WeaselDonutGame Win64 Development Build",
+			"program": "C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\Binaries\\Win64\\UE4.exe",
+			"args": [
+			],
+			"cwd": "C:\\Program Files (x86)\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "WeaselDonutGame (Shipping)",
+			"request": "launch",
+			"preLaunchTask": "WeaselDonutGame Win64 Shipping Build",
+			"program": "C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\Binaries\\Win64\\UE4-Win64-Shipping.exe",
+			"args": [
+			],
+			"cwd": "C:\\Program Files (x86)\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "WeaselDonutGame (Test)",
+			"request": "launch",
+			"preLaunchTask": "WeaselDonutGame Win64 Test Build",
+			"program": "C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\Binaries\\Win64\\UE4-Win64-Test.exe",
+			"args": [
+			],
+			"cwd": "C:\\Program Files (x86)\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "WeaselDonutGameEditor (Debug)",
+			"request": "launch",
+			"preLaunchTask": "WeaselDonutGameEditor Win64 Debug Build",
+			"program": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Binaries\\Win64\\UE4Editor-Win64-Debug.exe",
+			"args": [
+				"C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\WeaselDonutGame.uproject"
+			],
+			"cwd": "C:\\Program Files (x86)\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "WeaselDonutGameEditor (DebugGame)",
+			"request": "launch",
+			"preLaunchTask": "WeaselDonutGameEditor Win64 DebugGame Build",
+			"program": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Binaries\\Win64\\UE4Editor-Win64-DebugGame.exe",
+			"args": [
+				"C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\WeaselDonutGame.uproject"
+			],
+			"cwd": "C:\\Program Files (x86)\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "WeaselDonutGameEditor (Development)",
+			"request": "launch",
+			"preLaunchTask": "WeaselDonutGameEditor Win64 Development Build",
+			"program": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Binaries\\Win64\\UE4Editor.exe",
+			"args": [
+				"C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\WeaselDonutGame.uproject"
+			],
+			"cwd": "C:\\Program Files (x86)\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "Generate Project Files",
+			"type": "clr",
+			"request": "launch",
+			"program": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Binaries\\DotNET\\UnrealBuildTool.exe",
+			"console": "externalTerminal",
+			"args": [
+				"-projectfiles",
+				"-vscode",
+				"-project=C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\WeaselDonutGame.uproject",
+				"-game",
+				"-engine"
+			],
+			"internalConsoleOptions": "openOnSessionStart",
+			"cwd": "C:\\Program Files (x86)\\UE_4.26"
+		}
+	]
+}

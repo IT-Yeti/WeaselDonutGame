@@ -1,0 +1,37 @@
+[
+	{
+		"file": "C:\\\\Users\\\\Mateusz\\\\Documents\\\\Unreal Projects\\\\WeaselDonutGame\\\\Source\\\\WeaselDonutGame\\\\WeaselDonutGame.Build.cs",
+		"command": "cl.exe @\"C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\.vscode\\compileCommands_Default\\WeaselDonutGame.190.rsp\"",
+		"directory": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\Mateusz\\\\Documents\\\\Unreal Projects\\\\WeaselDonutGame\\\\Source\\\\WeaselDonutGame\\\\WeaselDonutGame.cpp",
+		"command": "cl.exe @\"C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\.vscode\\compileCommands_Default\\WeaselDonutGame.190.rsp\"",
+		"directory": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\Mateusz\\\\Documents\\\\Unreal Projects\\\\WeaselDonutGame\\\\Source\\\\WeaselDonutGame\\\\WeaselDonutGame.h",
+		"command": "cl.exe @\"C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\.vscode\\compileCommands_Default\\WeaselDonutGame.190.rsp\"",
+		"directory": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\Mateusz\\\\Documents\\\\Unreal Projects\\\\WeaselDonutGame\\\\Source\\\\WeaselDonutGame\\\\WeaselDonutGameCharacter.cpp",
+		"command": "cl.exe @\"C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\.vscode\\compileCommands_Default\\WeaselDonutGame.190.rsp\"",
+		"directory": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\Mateusz\\\\Documents\\\\Unreal Projects\\\\WeaselDonutGame\\\\Source\\\\WeaselDonutGame\\\\WeaselDonutGameCharacter.h",
+		"command": "cl.exe @\"C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\.vscode\\compileCommands_Default\\WeaselDonutGame.190.rsp\"",
+		"directory": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\Mateusz\\\\Documents\\\\Unreal Projects\\\\WeaselDonutGame\\\\Source\\\\WeaselDonutGame\\\\WeaselDonutGameGameMode.cpp",
+		"command": "cl.exe @\"C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\.vscode\\compileCommands_Default\\WeaselDonutGame.190.rsp\"",
+		"directory": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\Mateusz\\\\Documents\\\\Unreal Projects\\\\WeaselDonutGame\\\\Source\\\\WeaselDonutGame\\\\WeaselDonutGameGameMode.h",
+		"command": "cl.exe @\"C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\.vscode\\compileCommands_Default\\WeaselDonutGame.190.rsp\"",
+		"directory": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Source"
+	}
+]
