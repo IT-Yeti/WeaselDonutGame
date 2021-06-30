@@ -6,6 +6,8 @@
 #include "Components/InputComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Engine/World.h"
+#include "Kismet/GameplayStatics.h"
 
 AWeaselDonutGameCharacter::AWeaselDonutGameCharacter()
 {
@@ -54,9 +56,20 @@ void AWeaselDonutGameCharacter::SetupPlayerInputComponent(class UInputComponent*
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AWeaselDonutGameCharacter::MoveRight);
-
+	PlayerInputComponent->BindAction("AttachLine",IE_Pressed, this, &AWeaselDonutGameCharacter::AttachLine);
 	PlayerInputComponent->BindTouch(IE_Pressed, this, &AWeaselDonutGameCharacter::TouchStarted);
 	PlayerInputComponent->BindTouch(IE_Released, this, &AWeaselDonutGameCharacter::TouchStopped);
+}
+
+void AWeaselDonutGameCharacter::AttachLine() 
+{
+	FHitResult HitPoint;
+	float MouseLocationX;
+	float MouseLocationY;
+	UGameplayStatics::GetPlayerController(GetWorld(),0)->GetMousePosition(MouseLocationX,MouseLocationY);
+	const FVector Start = GetOwner()->GetActorLocation();
+	const FVector End = FVector(0,MouseLocationX,MouseLocationY);
+	UE_LOG(LogTemp,Warning,TEXT("Mouse position is equal to:%s"),*End.ToString());
 }
 
 void AWeaselDonutGameCharacter::MoveRight(float Value)
