@@ -63,19 +63,16 @@ void AWeaselDonutGameCharacter::SetupPlayerInputComponent(class UInputComponent*
 
 void AWeaselDonutGameCharacter::AttachLine() 
 {
-	FHitResult HitPoint;
-	float MouseLocationX;
-	float MouseLocationY;
-	UGameplayStatics::GetPlayerController(GetWorld(),0)->GetMousePosition(MouseLocationX,MouseLocationY);
-	const FVector Start = GetOwner()->GetActorLocation();
-	const FVector End = FVector(0,MouseLocationX,MouseLocationY);
-	UE_LOG(LogTemp,Warning,TEXT("Mouse position is equal to:%s"),*End.ToString());
+
 }
 
 void AWeaselDonutGameCharacter::MoveRight(float Value)
 {
 	// add movement in that direction
-	AddMovementInput(FVector(0.f,-1.f,0.f), Value);
+	if(!IsSwinging)
+	{
+		AddMovementInput(FVector(0.f,-1.f,0.f), Value);
+	}
 }
 
 void AWeaselDonutGameCharacter::TouchStarted(const ETouchIndex::Type FingerIndex, const FVector Location)
