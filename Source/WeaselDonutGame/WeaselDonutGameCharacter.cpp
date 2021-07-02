@@ -6,6 +6,8 @@
 #include "Components/InputComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Engine/World.h"
+#include "Kismet/GameplayStatics.h"
 
 AWeaselDonutGameCharacter::AWeaselDonutGameCharacter()
 {
@@ -54,15 +56,23 @@ void AWeaselDonutGameCharacter::SetupPlayerInputComponent(class UInputComponent*
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AWeaselDonutGameCharacter::MoveRight);
-
+	PlayerInputComponent->BindAction("AttachLine",IE_Pressed, this, &AWeaselDonutGameCharacter::AttachLine);
 	PlayerInputComponent->BindTouch(IE_Pressed, this, &AWeaselDonutGameCharacter::TouchStarted);
 	PlayerInputComponent->BindTouch(IE_Released, this, &AWeaselDonutGameCharacter::TouchStopped);
+}
+
+void AWeaselDonutGameCharacter::AttachLine() 
+{
+
 }
 
 void AWeaselDonutGameCharacter::MoveRight(float Value)
 {
 	// add movement in that direction
-	AddMovementInput(FVector(0.f,-1.f,0.f), Value);
+	if(!IsSwinging)
+	{
+		AddMovementInput(FVector(0.f,-1.f,0.f), Value);
+	}
 }
 
 void AWeaselDonutGameCharacter::TouchStarted(const ETouchIndex::Type FingerIndex, const FVector Location)
