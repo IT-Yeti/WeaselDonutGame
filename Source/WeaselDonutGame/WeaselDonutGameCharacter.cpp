@@ -8,6 +8,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Engine/World.h"
 #include "Kismet/GameplayStatics.h"
+#include "WeaselDonutGame/Components/DashAbility.h"
 
 AWeaselDonutGameCharacter::AWeaselDonutGameCharacter()
 {
@@ -55,16 +56,23 @@ void AWeaselDonutGameCharacter::SetupPlayerInputComponent(class UInputComponent*
 	// set up gameplay key bindings
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
+	PlayerInputComponent->BindAction("Dash", IE_Pressed, this, &AWeaselDonutGameCharacter::Dash);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AWeaselDonutGameCharacter::MoveRight);
-	PlayerInputComponent->BindAction("AttachLine",IE_Pressed, this, &AWeaselDonutGameCharacter::AttachLine);
 	PlayerInputComponent->BindTouch(IE_Pressed, this, &AWeaselDonutGameCharacter::TouchStarted);
 	PlayerInputComponent->BindTouch(IE_Released, this, &AWeaselDonutGameCharacter::TouchStopped);
 }
 
-void AWeaselDonutGameCharacter::AttachLine() 
+void AWeaselDonutGameCharacter::Dash() 
 {
-
+	Detach();
+	UActorComponent* DashComponent = FindComponentByClass(UDashAbility::StaticClass());
+	UDashAbility* DashAbility = Cast<UDashAbility>(DashComponent);
+	if(DashAbility)
+	{
+		DashAbility->Dash(this,IsSwinging);
+	}
 }
+
 
 void AWeaselDonutGameCharacter::MoveRight(float Value)
 {
