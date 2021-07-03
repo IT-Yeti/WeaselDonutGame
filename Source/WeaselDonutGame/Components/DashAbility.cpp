@@ -30,32 +30,37 @@ void UDashAbility::BeginPlay()
 void UDashAbility::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
+	Timer+=DeltaTime;
 	// ...
 }
 
-void UDashAbility::Dash(ACharacter* Character, bool IsAttached) 
+void UDashAbility::Dash(ACharacter* Character) 
 {
 	APlayerController* CharacterController = Cast<APlayerController>(Character->GetController());
+	if(Timer<Cooldown)
+	{
+		return;
+	}
 	if(CharacterController)
 	{
 		if(CharacterController->IsInputKeyDown(FKey(TEXT("D"))) || CharacterController->IsInputKeyDown(FKey(TEXT("A"))))
 		{
-			Character->LaunchCharacter(GetOwner()->GetActorForwardVector()*1000,false,false);
+			Character->LaunchCharacter(GetOwner()->GetActorForwardVector()*DashPower,false,false);
 		}
 		else if(CharacterController->IsInputKeyDown(FKey(TEXT("W"))))
 		{
-			Character->LaunchCharacter(GetOwner()->GetActorUpVector()*1000,false,false);
+			Character->LaunchCharacter(GetOwner()->GetActorUpVector()*DashPower,false,false);
 		}
 		else if(CharacterController->IsInputKeyDown(FKey(TEXT("S"))))
 		{
-			Character->LaunchCharacter(GetOwner()->GetActorUpVector()*1000*-1,false,false);
+			Character->LaunchCharacter(GetOwner()->GetActorUpVector()*DashPower*-1,false,false);
 		}
 		else
 		{
-			Character->LaunchCharacter(GetOwner()->GetActorForwardVector()*1000,false,false);
+			Character->LaunchCharacter(GetOwner()->GetActorForwardVector()*DashPower,false,false);
 		}
 	}
+	Timer=0;
 	
 }
 

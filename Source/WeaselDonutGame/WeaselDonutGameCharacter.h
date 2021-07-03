@@ -20,8 +20,6 @@ class AWeaselDonutGameCharacter : public ACharacter
 	class USpringArmComponent* CameraBoom;
 public:
 	AWeaselDonutGameCharacter();
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Swinging")
-	bool IsSwinging = false;
 	/** Returns SideViewCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
 	/** Returns CameraBoom subobject **/
@@ -43,4 +41,6 @@ protected:
 	// End of APawn interface
 private:
 	void Dash();
+	UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess = "true"))
+	bool IsSwinging;
 };

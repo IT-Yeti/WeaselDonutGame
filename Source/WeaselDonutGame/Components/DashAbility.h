@@ -18,7 +18,12 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	UFUNCTION()
-	void Dash(ACharacter* Character, bool IsAttached);
+	void Dash(ACharacter* Character);
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Dash")
+	float DashPower = 1000;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Dash")
+	float Cooldown = 5;
+	float Timer;
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;

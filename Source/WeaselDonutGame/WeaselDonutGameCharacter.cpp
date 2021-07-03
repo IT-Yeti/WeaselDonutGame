@@ -64,23 +64,22 @@ void AWeaselDonutGameCharacter::SetupPlayerInputComponent(class UInputComponent*
 
 void AWeaselDonutGameCharacter::Dash() 
 {
-	Detach();
+	if(IsSwinging)
+	{
+		Detach();
+	}
 	UActorComponent* DashComponent = FindComponentByClass(UDashAbility::StaticClass());
 	UDashAbility* DashAbility = Cast<UDashAbility>(DashComponent);
 	if(DashAbility)
 	{
-		DashAbility->Dash(this,IsSwinging);
+		DashAbility->Dash(this);
 	}
 }
 
 
 void AWeaselDonutGameCharacter::MoveRight(float Value)
 {
-	// add movement in that direction
-	if(!IsSwinging)
-	{
-		AddMovementInput(FVector(0.f,-1.f,0.f), Value);
-	}
+	
 }
 
 void AWeaselDonutGameCharacter::TouchStarted(const ETouchIndex::Type FingerIndex, const FVector Location)
