@@ -20,15 +20,15 @@ class AWeaselDonutGameCharacter : public ACharacter
 	class USpringArmComponent* CameraBoom;
 public:
 	AWeaselDonutGameCharacter();
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Swinging")
-	bool IsSwinging = false;
 	/** Returns SideViewCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+	UFUNCTION(BlueprintImplementableEvent)
+	void Detach();
 protected:
 	/** Called for side to side input */
-	void MoveRight(float Val);
+	void MoveRight(float Value);
 
 	/** Handle touch inputs. */
 	void TouchStarted(const ETouchIndex::Type FingerIndex, const FVector Location);
@@ -40,5 +40,7 @@ protected:
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 	// End of APawn interface
 private:
-	void AttachLine();
+	void Dash();
+	UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess = "true"))
+	bool IsSwinging;
 };
