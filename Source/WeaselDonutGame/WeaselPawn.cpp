@@ -5,6 +5,7 @@
 
 #include "AITypes.h"
 #include "Camera/CameraComponent.h"
+#include "Components/DashAbility.h"
 #include "GameFramework/SpringArmComponent.h"
 
 // Sets default values
@@ -36,6 +37,9 @@ AWeaselPawn::AWeaselPawn()
 	SideViewCameraComponent->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	SideViewCameraComponent->bUsePawnControlRotation = false; // We don't want the controller rotating the camera
 
+	// Create DashAbilityComponent and Attach to RootComponent
+	DashAbility = CreateDefaultSubobject<UDashAbility>(TEXT("Dash"));
+	
 	ForceAcceleration = 500.f;
 
 }
@@ -53,6 +57,11 @@ void AWeaselPawn::MoveRight(float Value)
 	UE_LOG(LogTemp, Warning, TEXT("Force: %f"), Value * ForceAcceleration * GetWorld()->GetDeltaSeconds());
 }
 
+void AWeaselPawn::Dash()
+{
+	DashAbility->Dash(this);
+}
+
 // Called every frame
 void AWeaselPawn::Tick(float DeltaTime)
 {
@@ -66,6 +75,7 @@ void AWeaselPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 	PlayerInputComponent->BindAxis("MoveRight", this, &AWeaselPawn::MoveRight);
+	PlayerInputComponent->BindAction("Dash", IE_Pressed, this, &AWeaselPawn::Dash);
 
 }
 

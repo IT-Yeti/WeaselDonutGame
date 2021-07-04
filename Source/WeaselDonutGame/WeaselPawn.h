@@ -22,6 +22,9 @@ class WEASELDONUTGAME_API AWeaselPawn : public APawn
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Weasel", meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Weasel", meta = (AllowPrivateAccess = "true"))
+	class UDashAbility* DashAbility;
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Weasel", meta = (AllowPrivateAccess = "true"))
 	float ForceAcceleration;
 
@@ -35,6 +38,8 @@ protected:
 	virtual void BeginPlay() override;
 
 	void MoveRight(float Value);
+
+	void Dash();
 
 public:	
 	// Called every frame

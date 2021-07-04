@@ -18,6 +18,7 @@ class AWeaselDonutGameCharacter : public ACharacter
 	/** Camera boom positioning the camera beside the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
+
 public:
 	AWeaselDonutGameCharacter();
 	/** Returns SideViewCameraComponent subobject **/
