@@ -10,6 +10,16 @@
 		"directory": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Source"
 	},
 	{
+		"file": "C:\\\\Users\\\\Mateusz\\\\Documents\\\\Unreal Projects\\\\WeaselDonutGame\\\\Source\\\\WeaselDonutGame\\\\Components\\\\SpawnHelperAbility.cpp",
+		"command": "cl.exe @\"C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\.vscode\\compileCommands_WeaselDonutGame\\WeaselDonutGame.190.rsp\"",
+		"directory": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\Mateusz\\\\Documents\\\\Unreal Projects\\\\WeaselDonutGame\\\\Source\\\\WeaselDonutGame\\\\Components\\\\SpawnHelperAbility.h",
+		"command": "cl.exe @\"C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\.vscode\\compileCommands_WeaselDonutGame\\WeaselDonutGame.190.rsp\"",
+		"directory": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Source"
+	},
+	{
 		"file": "C:\\\\Users\\\\Mateusz\\\\Documents\\\\Unreal Projects\\\\WeaselDonutGame\\\\Source\\\\WeaselDonutGame\\\\Custom\\\\MainGameMode.cpp",
 		"command": "cl.exe @\"C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\.vscode\\compileCommands_WeaselDonutGame\\WeaselDonutGame.190.rsp\"",
 		"directory": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Source"
@@ -51,6 +61,16 @@
 	},
 	{
 		"file": "C:\\\\Users\\\\Mateusz\\\\Documents\\\\Unreal Projects\\\\WeaselDonutGame\\\\Source\\\\WeaselDonutGame\\\\WeaselDonutGameGameMode.h",
+		"command": "cl.exe @\"C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\.vscode\\compileCommands_WeaselDonutGame\\WeaselDonutGame.190.rsp\"",
+		"directory": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\Mateusz\\\\Documents\\\\Unreal Projects\\\\WeaselDonutGame\\\\Source\\\\WeaselDonutGame\\\\WeaselPawn.cpp",
+		"command": "cl.exe @\"C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\.vscode\\compileCommands_WeaselDonutGame\\WeaselDonutGame.190.rsp\"",
+		"directory": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\Mateusz\\\\Documents\\\\Unreal Projects\\\\WeaselDonutGame\\\\Source\\\\WeaselDonutGame\\\\WeaselPawn.h",
 		"command": "cl.exe @\"C:\\Users\\Mateusz\\Documents\\Unreal Projects\\WeaselDonutGame\\.vscode\\compileCommands_WeaselDonutGame\\WeaselDonutGame.190.rsp\"",
 		"directory": "C:\\Program Files (x86)\\UE_4.26\\Engine\\Source"
 	}
