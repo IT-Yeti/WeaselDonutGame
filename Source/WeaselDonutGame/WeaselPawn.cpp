@@ -44,6 +44,16 @@ AWeaselPawn::AWeaselPawn()
 
 }
 
+// Called to bind functionality to input
+void AWeaselPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	PlayerInputComponent->BindAxis("MoveRightAD", this, &AWeaselPawn::MoveRight);
+	PlayerInputComponent->BindAction("Dash", IE_Pressed, this, &AWeaselPawn::Dash);
+
+}
+
 // Called when the game starts or when spawned
 void AWeaselPawn::BeginPlay()
 {
@@ -54,11 +64,12 @@ void AWeaselPawn::BeginPlay()
 void AWeaselPawn::MoveRight(float Value)
 {
 	Mesh->AddForce(FVector(0.f, -Value * ForceAcceleration * GetWorld()->GetDeltaSeconds(), 0.f));
-	UE_LOG(LogTemp, Warning, TEXT("Force: %f"), Value * ForceAcceleration * GetWorld()->GetDeltaSeconds());
+	//UE_LOG(LogTemp, Warning, TEXT("Force: %f"), Value * ForceAcceleration * GetWorld()->GetDeltaSeconds());
 }
 
 void AWeaselPawn::Dash()
 {
+	Detach();
 	DashAbility->Dash(this);
 }
 
@@ -66,16 +77,6 @@ void AWeaselPawn::Dash()
 void AWeaselPawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-}
-
-// Called to bind functionality to input
-void AWeaselPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-	PlayerInputComponent->BindAxis("MoveRight", this, &AWeaselPawn::MoveRight);
-	PlayerInputComponent->BindAction("Dash", IE_Pressed, this, &AWeaselPawn::Dash);
 
 }
 

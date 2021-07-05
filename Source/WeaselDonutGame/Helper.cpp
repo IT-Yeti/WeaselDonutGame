@@ -16,7 +16,11 @@ AHelper::AHelper()
 void AHelper::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	StaticMeshRef = FindComponentByClass<UStaticMeshComponent>();
+	if(StaticMeshRef)
+	{
+		UE_LOG(LogTemp,Warning,TEXT("I found static mesh"));
+	}
 }
 
 // Called every frame
@@ -30,7 +34,12 @@ void AHelper::Tick(float DeltaTime)
 void AHelper::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
+	PlayerInputComponent->BindAxis("MoveRightArrows", this, &AHelper::MoveRight);
+}
 
+void AHelper::MoveRight(float Value) 
+{
+	UE_LOG(LogTemp,Warning,TEXT("Yo"));
+	StaticMeshRef->AddForce(FVector(0.f, -Value * 500 * GetWorld()->GetDeltaSeconds(), 0.f));
 }
 

@@ -43,21 +43,34 @@ void UDashAbility::Dash(APawn* Character)
 	}
 	if(CharacterController)
 	{
-		if(CharacterController->IsInputKeyDown(FKey(TEXT("D"))) || CharacterController->IsInputKeyDown(FKey(TEXT("A"))))
+		UStaticMeshComponent* StaticMeshRef = Character->FindComponentByClass<UStaticMeshComponent>();
+		if(!StaticMeshRef)
 		{
-			Character->LaunchPawn(GetOwner()->GetActorForwardVector()*DashPower,false,false);
+			return;
+			UE_LOG(LogTemp,Warning,TEXT("There are no Mesh reference"));
+		}
+
+		if(CharacterController->IsInputKeyDown(FKey(TEXT("A"))))
+		{
+			UE_LOG(LogTemp,Warning,TEXT("Dashing Forwards"));
+			StaticMeshRef->AddForce(FVector(0.f,-DashPower,0.f),FName(TEXT("None")),true);
+		}
+		else if(CharacterController->IsInputKeyDown(FKey(TEXT("D"))))
+		{
+			StaticMeshRef->AddForce(FVector(0.f,DashPower,0.f),FName(TEXT("None")),true);
 		}
 		else if(CharacterController->IsInputKeyDown(FKey(TEXT("W"))))
 		{
-			Character->LaunchPawn(GetOwner()->GetActorUpVector()*DashPower,false,false);
+			StaticMeshRef->AddImpulse(FVector(0,0,DashPower),FName(TEXT("None")),true);
 		}
 		else if(CharacterController->IsInputKeyDown(FKey(TEXT("S"))))
 		{
-			Character->LaunchPawn(GetOwner()->GetActorUpVector()*DashPower*-1,false,false);
+			StaticMeshRef->AddImpulse(FVector(0,0,-DashPower),FName(TEXT("None")),true);
 		}
 		else
 		{
-			Character->LaunchPawn(GetOwner()->GetActorForwardVector()*DashPower,false,false);
+			UE_LOG(LogTemp,Warning,TEXT("Actor Forward Vector:%s"),*Character->GetActorForwardVector().ToString());
+			StaticMeshRef->AddImpulse(FVector(0,DashPower,0),FName(TEXT("None")),true);
 		}
 	}
 	Timer=0;
