@@ -69,7 +69,10 @@ void AWeaselPawn::MoveRight(float Value)
 
 void AWeaselPawn::Dash()
 {
-	Detach();
+	if(IsSwinging)
+	{
+		Detach();
+	}
 	DashAbility->Dash(this);
 }
 

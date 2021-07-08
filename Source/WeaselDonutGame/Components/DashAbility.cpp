@@ -70,7 +70,7 @@ void UDashAbility::Dash(APawn* Character)
 		else
 		{
 			UE_LOG(LogTemp,Warning,TEXT("Actor Forward Vector:%s"),*Character->GetActorForwardVector().ToString());
-			StaticMeshRef->AddImpulse(FVector(0,DashPower,0),FName(TEXT("None")),true);
+			StaticMeshRef->AddImpulse(FVector(0,-DashPower,0),FName(TEXT("None")),true);
 		}
 	}
 	Timer=0;
