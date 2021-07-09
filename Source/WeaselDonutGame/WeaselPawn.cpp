@@ -3,7 +3,6 @@
 
 #include "WeaselPawn.h"
 
-#include "AITypes.h"
 #include "Camera/CameraComponent.h"
 #include "Components/DashAbility.h"
 #include "GameFramework/SpringArmComponent.h"
