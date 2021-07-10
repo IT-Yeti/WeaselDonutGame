@@ -23,6 +23,7 @@ public:
 	float DashPower = 1000;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Dash")
 	float Cooldown = 5;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Dash")
 	float Timer;
 protected:
 	// Called when the game starts

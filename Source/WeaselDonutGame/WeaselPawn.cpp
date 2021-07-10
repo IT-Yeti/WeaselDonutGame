@@ -37,7 +37,7 @@ AWeaselPawn::AWeaselPawn()
 	SideViewCameraComponent->bUsePawnControlRotation = false; // We don't want the controller rotating the camera
 
 	// Create DashAbilityComponent and Attach to RootComponent
-	DashAbility = CreateDefaultSubobject<UDashAbility>(TEXT("Dash"));
+	
 	
 	ForceAcceleration = 500.f;
 
@@ -57,6 +57,8 @@ void AWeaselPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 void AWeaselPawn::BeginPlay()
 {
 	Super::BeginPlay();
+	UActorComponent* AbilityComponent = GetComponentByClass(UDashAbility::StaticClass());
+	DashAbility = Cast<UDashAbility>(AbilityComponent);
 	
 }
 
@@ -72,7 +74,12 @@ void AWeaselPawn::Dash()
 	{
 		Detach();
 	}
-	DashAbility->Dash(this);
+
+	if(DashAbility)
+	{
+		DashAbility->Dash(this);
+	}
+
 }
 
 // Called every frame

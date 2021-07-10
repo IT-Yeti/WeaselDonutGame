@@ -22,9 +22,6 @@ class WEASELDONUTGAME_API AWeaselPawn : public APawn
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Weasel", meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Weasel", meta = (AllowPrivateAccess = "true"))
-	class UDashAbility* DashAbility;
-
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Weasel", meta = (AllowPrivateAccess = "true"))
 	float ForceAcceleration;
 
@@ -51,4 +48,6 @@ public:
 	void Detach();
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
 	bool IsSwinging=false;
+private:
+	class UDashAbility* DashAbility;
 };
